@@ -1,0 +1,11 @@
+require './spec/spec_helper'
+
+describe <%= name.camelize %> do
+  before do
+
+  end
+
+  it "should x" do
+
+  end
+end
