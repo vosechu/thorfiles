@@ -37,11 +37,11 @@ class Ruby < Thor::Group # Thor::Group executes all methods at the same time
       template 'templates/spec.tt', "#{name}/spec/#{name}_spec.rb"
     end
   end
-end
 
-class String
-  def camelize(uppercase_first_letter = true)
-    string = self.to_s
+  private
+
+  def camelize(word, uppercase_first_letter = true)
+    string = word.to_s
     if uppercase_first_letter
       string = string.sub(/^[a-z\d]*/) { $&.capitalize }
     else

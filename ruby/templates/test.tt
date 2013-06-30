@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require 'mocha/setup'
 
-class <%= name.camelize %>Test < MiniTest::Unit::TestCase
+class <%= camelize(name) %>Test < MiniTest::Unit::TestCase
   def setup
 
   end
