@@ -8,7 +8,7 @@ class Ruby < Thor::Group # Thor::Group executes all methods at the same time
     File.dirname(__FILE__)
   end
 
-  desc "generate a simple sinatra config"
+  desc "generate a simple ruby folder"
   argument :name
   class_option :test_framework
 

@@ -12,8 +12,11 @@ class Sinatra < Thor::Group # Thor::Group executes all methods at the same time
   argument :name
 
   def create_template_files
-    Dir.glob("templates/**", File::FNM_DOTMATCH) do |file|
-      next if file == 'templates/.' || file == 'templates/..'
+    FileUtils.mkdir(name)
+    FileUtils.mkdir("#{name}/views")
+    FileUtils.mkdir("#{name}/public")
+    Dir.glob(Sinatra.source_root + "/templates/**", File::FNM_DOTMATCH) do |file|
+      next if File.basename(file) == "." || File.basename(file) == ".."
       # puts file, "#{name}/#{File.basename(file)}"
       copy_file file, "#{name}/#{File.basename(file)}"
     end
